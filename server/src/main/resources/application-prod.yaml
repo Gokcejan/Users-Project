@@ -1,5 +1,0 @@
-csp:
-  integration:
-    csp1Url: https://providers.cloudsoftphone.com
-  emailing:
-    enabled: true
