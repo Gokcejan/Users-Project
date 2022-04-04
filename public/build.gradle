@@ -1,0 +1,58 @@
+plugins {
+    id "java"
+    id 'java-library'
+    id "groovy"
+    id "maven-publish"
+    id "io.freefair.lombok" version "5.3.0"
+    id "io.spring.dependency-management" version "1.0.10.RELEASE"
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion"
+        mavenBom "org.springframework.boot:spring-boot-dependencies:$springBootVersion"
+    }
+}
+
+dependencies {
+
+    compile "cz.acrobits.csp:core-public:$cspCorePublicVersion"
+}
+
+// To provide public classes and interfaces for another components
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = project.groupId
+            artifactId = project.artifactId
+            version = project.version
+
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username 'write-user'
+                password 'Fikus911'
+            }
+            def releasesRepoUrl = "https://nexus.acrobits.net/repository/maven-releases"
+            def snapshotsRepoUrl = "https://nexus.acrobits.net/repository/maven-snapshots"
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+        }
+    }
+}
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+tasks.withType(PublishToMavenRepository) {
+    onlyIf {
+        !jar.state.upToDate
+    }
+}

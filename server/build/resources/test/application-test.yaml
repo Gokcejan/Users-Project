@@ -1,0 +1,49 @@
+eureka:
+  client:
+    enabled: false
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  jmx:
+    enabled: false
+  sleuth:
+    enabled: false
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:payment-management;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
+    username: ff
+    password: password
+    maximum-pool-size: 50
+    connection-timeout: 10000
+    idle-timeout: 30000
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    #show-sql: true
+    properties:
+      hibernate:
+      #   format_sql: true
+    hibernate:
+      format_sql: false
+      ddl-auto: create-drop
+  flyway:
+    baselineOnMigrate: false
+    enabled: false
+    locations: classpath:db/migration
+  boot:
+    admin:
+      client:
+        enabled: false
+
+feign:
+  hystrix:
+    enabled: false
+
+
+issue-management.api.asynchronous: true
+csp:
+  queueJob:
+    cronEnabled: false
+
+
+

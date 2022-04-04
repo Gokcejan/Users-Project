@@ -1,0 +1,15 @@
+<configuration>
+
+    <!--Sentry appender needs property so it has to be initialized after properties are prepared-->
+    <!-- If application crashes on startup, there will be  no log messages with DelegatingLogbackAppender -->
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <Pattern>%d %-4relative [%thread] %-5level %logger{35} - %msg%n</Pattern>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="consoleAppender"/>
+    </root>
+
+</configuration>

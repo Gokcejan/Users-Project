@@ -1,0 +1,6 @@
+csp:
+  url: https://csp1-beta.cloudsoftphone.com
+  integration:
+    csp1Url: https://csp1-beta.cloudsoftphone.com
+  emailing:
+    enabled: true

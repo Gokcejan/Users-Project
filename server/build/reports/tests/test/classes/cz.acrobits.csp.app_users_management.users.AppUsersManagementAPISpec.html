@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class cz.acrobits.csp.app_users_management.users.AppUsersManagementAPISpec</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class cz.acrobits.csp.app_users_management.users.AppUsersManagementAPISpec</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/cz.acrobits.csp.app_users_management.users.html">cz.acrobits.csp.app_users_management.users</a> &gt; AppUsersManagementAPISpec</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">51.514s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Authenticate user</td>
+<td class="success">51.514s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2022-01-15 11:07:58,729 203  [Test worker] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [cz.acrobits.csp.app_users_management.users.AppUsersManagementAPISpec]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-01-15 11:07:58,916 390  [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-01-15 11:07:58,933 407  [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@56d54166, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@657833b2, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7992478b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@405cce55, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3c7e6949, org.springframework.test.context.transaction.TransactionalTestExecutionListener@18bf38d7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@73fa9a54, org.springframework.test.context.event.EventPublishingTestExecutionListener@5572dc18, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1a09d3de, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7b1139c8, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5c9e34c4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1f4fb153, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4b0c0647, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@39a1b997]
+2022-01-15 11:07:59,610 1084 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v2.3.11.RELEASE)
+
+2022-01-15 11:08:00,132 1606 [Test worker] INFO  c.a.c.a.u.AppUsersManagementAPISpec - The following profiles are active: test
+2022-01-15 11:08:00,930 2404 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-01-15 11:08:01,097 2571 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 161ms. Found 4 JPA repository interfaces.
+2022-01-15 11:08:01,716 3190 [Test worker] INFO  o.s.c.context.scope.GenericScope - BeanFactory id=8f2806dc-f379-3495-8ed2-b53e00da5074
+2022-01-15 11:08:01,924 3398 [Test worker] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'setPathVariablesToBodyInterceptor' of type [cz.acrobits.csp.core.common.rest.dto_binding.SetPathVariablesToBodyInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-15 11:08:01,926 3400 [Test worker] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'setPathVariablesToBodyAdvisor' of type [cz.acrobits.csp.core.common.rest.dto_binding.SetPathVariablesToBodyAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-15 11:08:01,933 3407 [Test worker] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'setupEntityDependenciesInterceptor' of type [cz.acrobits.csp.core.jpa.domain.dependencies.SetupEntityDependenciesInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-15 11:08:01,934 3408 [Test worker] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'setupEntityDependenciesAdvisor' of type [cz.acrobits.csp.core.jpa.domain.dependencies.SetupEntityDependenciesAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-15 11:08:02,157 3631 [Test worker] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@160069f7' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-15 11:08:02,180 3654 [Test worker] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'oAuth2MethodSecurityExpressionHandler' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-15 11:08:02,182 3656 [Test worker] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityConfig' of type [cz.acrobits.csp.app_users_management.configuration.security.MethodSecurityConfig$$EnhancerBySpringCGLIB$$45d371fd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-15 11:08:02,189 3663 [Test worker] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-01-15 11:08:02,522 3996 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-01-15 11:08:02,564 4038 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.31.Final
+2022-01-15 11:08:02,689 4163 [Test worker] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-01-15 11:08:02,791 4265 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-01-15 11:08:02,964 4438 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-01-15 11:08:02,981 4455 [Test worker] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-01-15 11:08:03,194 4668 [Test worker] INFO  o.h.id.enhanced.TableGenerator - HHH000398: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [persistent_command]
+2022-01-15 11:08:03,200 4674 [Test worker] INFO  o.h.id.enhanced.TableGenerator - HHH000398: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [persistent_command_archive]
+2022-01-15 11:08:03,200 4674 [Test worker] INFO  o.h.id.enhanced.TableGenerator - HHH000398: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [password_reset_request]
+2022-01-15 11:08:03,200 4674 [Test worker] INFO  o.h.id.enhanced.TableGenerator - HHH000398: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [app_user]
+2022-01-15 11:08:03,870 5344 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-01-15 11:08:03,877 5351 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-01-15 11:08:04,405 5879 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-01-15 11:08:04,711 6185 [Test worker] WARN  c.n.c.s.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-01-15 11:08:04,711 6185 [Test worker] INFO  c.n.c.s.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-01-15 11:08:04,725 6199 [Test worker] INFO  c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@560ad7a2
+2022-01-15 11:08:06,134 7608 [Test worker] INFO  c.a.c.s.c.s.RestTemplateWithSysUser - RestTemplateWithSysUser initialized  ...
+2022-01-15 11:08:06,216 7690 [Test worker] INFO  c.a.c.s.c.s.RestTemplateWithSysUser - RestTemplateWithSysUser initialized  ...
+2022-01-15 11:08:06,296 7770 [Test worker] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'threadPoolTaskExecutor'
+2022-01-15 11:08:06,311 7785 [Test worker] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-01-15 11:08:07,004 8478 [Test worker] WARN  c.n.c.s.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-01-15 11:08:07,005 8479 [Test worker] INFO  c.n.c.s.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-01-15 11:08:08,125 9599 [Test worker] INFO  o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/actuator/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5b192dfd, org.springframework.security.web.context.SecurityContextPersistenceFilter@2e109b21, org.springframework.security.web.authentication.logout.LogoutFilter@65c5a30c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@420af72c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f892825, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ed16a1a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ee32256, org.springframework.security.web.session.SessionManagementFilter@ceba996, org.springframework.security.web.access.ExceptionTranslationFilter@1e72349b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@389d1d93]
+2022-01-15 11:08:08,143 9617 [Test worker] INFO  o.s.s.w.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7740f808, org.springframework.security.web.context.SecurityContextPersistenceFilter@77b2686c, org.springframework.security.web.authentication.logout.LogoutFilter@1bee03f2, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@7a4c481e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64d55327, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9594a31, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7199dc27, org.springframework.security.web.session.SessionManagementFilter@73c0b289, org.springframework.security.web.access.ExceptionTranslationFilter@7c423478, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@384c10a3]
+2022-01-15 11:08:08,579 10053 [Test worker] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses Jersey
+2022-01-15 11:08:08,619 10093 [Test worker] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-01-15 11:08:08,751 10225 [Test worker] WARN  o.s.c.s.o.SpringCloudSecurityAutoConfiguration - All Spring Cloud Security modules and starters are deprecated. They will be moved to individual projects in the next major release.
+2022-01-15 11:08:08,776 10250 [Test worker] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 21 endpoint(s) beneath base path '/actuator'
+2022-01-15 11:08:08,873 10347 [Test worker] INFO  c.a.c.a.u.AppUsersManagementAPISpec - Started AppUsersManagementAPISpec in 9.548 seconds (JVM running for 11.059)
+2022-01-15 11:08:09,201 10675 [Test worker] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2022-01-15 11:08:09,201 10675 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2022-01-15 11:08:09,216 10690 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 15 ms
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /users
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, Content-Length:&quot;265&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = cz.acrobits.csp.app_users_management.rest.UserRESTController
+           Method = cz.acrobits.csp.app_users_management.rest.UserRESTController#createUser(UserCreateDto)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Location:&quot;http://app-users-management/users/1&quot;, Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {
+  &quot;_identity&quot; : {
+    &quot;cls&quot; : &quot;app-users-management-user&quot;,
+    &quot;id&quot; : 1
+  },
+  &quot;createdAt&quot; : &quot;2022-01-15T10:08:09.460832Z&quot;,
+  &quot;lastModifiedAt&quot; : &quot;2022-01-15T10:08:09.460832Z&quot;,
+  &quot;username&quot; : &quot;Franta&quot;,
+  &quot;cloudId&quot; : &quot;MY_APP&quot;,
+  &quot;email&quot; : &quot;pokus@pokus.cz&quot;,
+  &quot;applicationId&quot; : 111,
+  &quot;organizationId&quot; : 222,
+  &quot;_links&quot; : {
+    &quot;createdBy&quot; : {
+      &quot;href&quot; : &quot;http://user-management/users/80&quot;
+    }
+  },
+  &quot;_relations&quot; : {
+    &quot;createdBy&quot; : {
+      &quot;cls&quot; : &quot;user-management-user&quot;,
+      &quot;id&quot; : 80,
+      &quot;type&quot; : &quot;SINGLE&quot;
+    }
+  }
+}
+    Forwarded URL = null
+   Redirected URL = http://app-users-management/users/1
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /users/authenticate
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, Content-Length:&quot;231&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = cz.acrobits.csp.app_users_management.rest.UserRESTController
+           Method = cz.acrobits.csp.app_users_management.rest.UserRESTController#authenticateUser(UserAuthenticateDto)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /users/authenticate
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, Content-Length:&quot;151&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = cz.acrobits.csp.app_users_management.rest.UserRESTController
+           Method = cz.acrobits.csp.app_users_management.rest.UserRESTController#authenticateUser(UserAuthenticateDto)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 401
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /users/authenticate
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, Content-Length:&quot;150&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = cz.acrobits.csp.app_users_management.rest.UserRESTController
+           Method = cz.acrobits.csp.app_users_management.rest.UserRESTController#authenticateUser(UserAuthenticateDto)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 401
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /users/authenticate
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, Content-Length:&quot;157&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = cz.acrobits.csp.app_users_management.rest.UserRESTController
+           Method = cz.acrobits.csp.app_users_management.rest.UserRESTController#authenticateUser(UserAuthenticateDto)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 401
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2022-01-15 11:08:50,763 52237 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47s693ms).
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /users/authenticate
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, Content-Length:&quot;131&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = cz.acrobits.csp.app_users_management.rest.UserRESTController
+           Method = cz.acrobits.csp.app_users_management.rest.UserRESTController#authenticateUser(UserAuthenticateDto)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2022-01-15 11:08:50,800 52274 [Test worker] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-01-15 11:08:50,801 52275 [Test worker] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'threadPoolTaskExecutor'
+2022-01-15 11:08:50,809 52283 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-01-15 11:08:50,809 52283 [Test worker] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.7</a> at Jan 15, 2022, 11:08:50 AM</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+spring:
+  application:
+     name: app-users-management
+
+  cloud:
+    config:
+      enabled: false
+      uri: http://config-server:8001
+      failFast: false

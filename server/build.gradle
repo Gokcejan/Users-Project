@@ -1,0 +1,165 @@
+plugins {
+    id "java"
+    id 'java-library'
+    id "groovy"
+    id "maven-publish"
+    id "io.freefair.lombok" version "5.3.0"
+    id "io.spring.dependency-management" version "1.0.10.RELEASE"
+    id "org.springframework.boot" version "$springBootVersion"
+    id "org.asciidoctor.convert" version "1.5.3"
+}
+
+configurations {
+    astTransformation
+}
+
+apply plugin: "spring-cloud-contract"
+
+sourceSets.main.java.srcDirs = []
+sourceSets.main.groovy.srcDirs += ["src/main/java"]
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:$springBootVersion"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion"
+    }
+}
+
+dependencies {
+
+    // ---------------
+    // Our projects
+    // ---------------
+
+    compile project(':public')
+
+    astTransformation("cz.acrobits.csp:csp-core-ast:1.0.0")
+
+    // sso
+    compile "cz.acrobits.csp:provisioning-sdk:$cspProvisioningSdk"
+
+    // csp core
+    compile "cz.acrobits.csp:core:$cspCoreVersion"
+    compile "cz.acrobits.csp:core-jpa:$cspCoreJpaVersion"
+    compile "cz.acrobits.csp:core-queue-config:$cspCoreQueueConfig"
+    compile "cz.acrobits.csp:logging:$cspLoggingVersion"
+
+    // csp services
+    compile "cz.acrobits.csp:security-core:$cspSecurityCoreVersion"
+    compile "cz.acrobits.csp:user-management-public:$cspUserManagementPublicVersion"
+    compile "cz.acrobits.csp:mailer-sdk:$cspMailerSdkVersion"
+
+    // ---------------
+    // Spring
+    // ---------------
+
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-hateoas"
+
+    compile "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server"
+    compile "org.springframework.cloud:spring-cloud-starter-config"
+    compile "org.springframework.cloud:spring-cloud-starter-sleuth"
+
+    compile "org.springframework.cloud:spring-cloud-starter-openfeign"
+    compile "io.github.openfeign.form:feign-form:3.8.0"
+    compile "io.github.openfeign.form:feign-form-spring:3.8.0"
+    compile 'io.github.openfeign:feign-jackson:10.10.1'
+
+    compile "org.springframework.cloud:spring-cloud-starter-security"
+    compile "org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.1.RELEASE"
+    compile "org.springframework.security.oauth:spring-security-oauth2:2.3.3.RELEASE"
+
+    compile "org.springframework.boot:spring-boot-starter-data-jpa"
+
+    compile "de.codecentric:spring-boot-admin-starter-client:$springAdminVersion"
+    compile "org.hibernate:hibernate-java8"
+
+
+    // ---------------
+    // General
+    // ---------------
+
+    implementation "org.codehaus.groovy:groovy:2.5.13"
+    implementation "org.codehaus.groovy:groovy-all:2.5.13"
+    implementation "org.codehaus.groovy:groovy:2.5.13"
+    implementation "org.codehaus.groovy:groovy-all:2.5.13"
+    implementation "org.codehaus.groovy:groovy-ant:2.5.13"
+    implementation "org.codehaus.groovy:groovy-bsf:2.5.13"
+    implementation "org.codehaus.groovy:groovy-console:2.5.13"
+    implementation "org.codehaus.groovy:groovy-docgenerator:2.5.13"
+    implementation "org.codehaus.groovy:groovy-groovydoc:2.5.13"
+    implementation "org.codehaus.groovy:groovy-groovysh:2.5.13"
+    implementation "org.codehaus.groovy:groovy-jmx:2.5.13"
+    implementation "org.codehaus.groovy:groovy-json:2.5.13"
+    implementation "org.codehaus.groovy:groovy-jsr223:2.5.13"
+    implementation "org.codehaus.groovy:groovy-nio:2.5.13"
+    implementation "org.codehaus.groovy:groovy-servlet:2.5.13"
+    implementation "org.codehaus.groovy:groovy-sql:2.5.13"
+    implementation "org.codehaus.groovy:groovy-swing:2.5.13"
+    implementation "org.codehaus.groovy:groovy-templates:2.5.13"
+    implementation "org.codehaus.groovy:groovy-test:2.5.13"
+    implementation "org.codehaus.groovy:groovy-testng:2.5.13"
+    implementation "org.codehaus.groovy:groovy-xml:2.5.13"
+
+    compile 'org.jolokia:jolokia-core:1.6.2'
+
+    compile "net.logstash.logback:logstash-logback-encoder:5.0"
+
+    // ---------------
+    // Test
+    // ---------------
+
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+    testCompile "org.springframework.restdocs:spring-restdocs-mockmvc"
+
+    testCompile "org.spockframework:spock-core"
+    testRuntime "org.spockframework:spock-spring:1.1-groovy-2.4"
+    testCompile "cglib:cglib-nodep:3.2.4"
+
+
+    testCompile "org.hamcrest:hamcrest-all"
+    testRuntime "com.h2database:h2"
+}
+
+asciidoctor {
+    dependsOn test
+    sourceDir = file('/src/main/resources/doc-api-adoc')
+    outputDir docHtmlDir
+    inputs.dir docAdocDir
+    backends 'html5'
+    attributes 'source-highlighter' : 'prettify',
+            'imagesdir':'images',
+            'toc':'left',
+            'icons': 'font',
+            'setanchors':'true',
+            'idprefix':'',
+            'idseparator':'-',
+            'docinfo1':'true',
+            'snippets': docAdocDir
+}
+
+tasks.withType(GroovyCompile).configureEach {
+    astTransformationClasspath.from(configurations.astTransformation)
+}
+
+build {
+    dependsOn asciidoctor
+}
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/server/classes/main/")
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+// Pass system properties to java process
+task local {
+    bootRun { systemProperties System.getProperties() }
+}
+bootRun.mustRunAfter local

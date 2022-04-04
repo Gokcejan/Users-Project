@@ -1,0 +1,479 @@
+<provisioning id="DEMO_APP" versionId="3" versionState="STATE_LIVE" clientVersion="" versionPaymentState="NORMAL" versionTag="f65353e7" versionLockState="FULLY_LOCKED" bundle="whitelabel">
+    <account>
+        <core>
+            <title>My VOIP</title>
+            <host>pbx.acrobits.cz</host>
+            <smartContactsEnabled>0</smartContactsEnabled>
+            <smartContactsEnabled2>0</smartContactsEnabled2>
+            <transport>udp</transport>
+            <proxy/>
+            <voiceMailNumber/>
+            <expires>600</expires>
+            <messagePreview>full</messagePreview>
+            <dummy>off</dummy>
+            <newaccount_show_link>0</newaccount_show_link>
+            <newaccount_show_link2>0</newaccount_show_link2>
+            <editaccount_show_link>0</editaccount_show_link>
+            <editaccount_show_link2>0</editaccount_show_link2>
+            <allowMessage>0</allowMessage>
+            <icm_auto>1</icm_auto>
+            <enableWmsSemantic>1</enableWmsSemantic>
+            <enableRtcpMux>1</enableRtcpMux>
+            <codecOrder>0,8,9,18,102</codecOrder>
+            <ptime>20</ptime>
+            <codecOrder3G>18,102,3,0,8,9</codecOrder3G>
+            <ptime3G>30</ptime3G>
+            <codecOrderWebrtc>103,9,0,8</codecOrderWebrtc>
+            <videoCodecOrder>108,99</videoCodecOrder>
+            <videoCodecOrder3G>108,99</videoCodecOrder3G>
+            <videoCodecOrderWebrtc>109,108,99</videoCodecOrderWebrtc>
+            <natTraversal>auto</natTraversal>
+            <STUN/>
+            <contactIP>internal</contactIP>
+            <keepAlive>1</keepAlive>
+            <keepAlivePeriod>30</keepAlivePeriod>
+        </core>
+        <props>
+            <prop default="My VOIP" name="title"/>
+            <prop default="pbx.acrobits.cz" name="host"/>
+            <prop default="0" name="smartContactsEnabled2"/>
+            <prop default="1" name="conferencing_enabled"/>
+            <prop default="1" name="conferencing_cloud"/>
+            <prop default="100" name="conferencing_tier_100"/>
+            <prop default="EUROPE_CENTRAL" name="conferencing_region"/>
+            <prop default="cloudsoftphone" name="conferencing_subdomain"/>
+            <prop default="https://gamma.together.acrobits.net/" name="conferencing_acrobits_UIHost_envOther"/>
+            <prop default="https://beta.together.acrobits.net" name="conferencing_acrobits_Host_envOther"/>
+            <prop default="https://conferencing.beta.cloudsoftphone.com/" name="conferencingManagement_acrobits_Host_envOther"/>
+            <prop default="DEMO_APP" name="family"/>
+            <prop default="1" name="icm_auto"/>
+            <prop default="0,8,9,18,102" name="codecOrder"/>
+            <prop default="20" name="ptime"/>
+            <prop default="18,102,3,0,8,9" name="codecOrder3G"/>
+            <prop default="30" name="ptime3G"/>
+            <prop default="103,9,0,8" name="codecOrderWebrtc"/>
+            <prop default="108,99" name="videoCodecOrder"/>
+            <prop default="108,99" name="videoCodecOrder3G"/>
+            <prop default="109,108,99" name="videoCodecOrderWebrtc"/>
+            <prop name="password">
+                <validator type="required"/>
+            </prop>
+        </props>
+        <plist tag="newaccount">
+            <dict>
+                <key>PreferenceSpecifiers</key>
+                <array>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Header</key>
+                        <string/>
+                        <key>HeaderInfo</key>
+                        <dict>
+                            <key>Class</key>
+                            <string>AsyncImageHeader</string>
+                            <key>Params</key>
+                            <dict>
+                                <key>ProcessImage</key>
+                                <false/>
+                                <key>ThemeImage</key>
+                                <string>logo</string>
+                                <key>Height</key>
+                                <integer>100</integer>
+                            </dict>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSTextFieldSpecifier</string>
+                        <key>Title</key>
+                        <string>localized:Username</string>
+                        <key>Key</key>
+                        <string>username</string>
+                        <key>Placeholder</key>
+                        <string>localized:username</string>
+                        <key>Secure</key>
+                        <false/>
+                        <key>AutocapitalizationType</key>
+                        <string>None</string>
+                        <key>AutocorrectionType</key>
+                        <string>No</string>
+                        <key>XOffset</key>
+                        <integer>120</integer>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSTextFieldSpecifier</string>
+                        <key>Title</key>
+                        <string>localized:Password</string>
+                        <key>Key</key>
+                        <string>password</string>
+                        <key>Placeholder</key>
+                        <string>localized:secret</string>
+                        <key>Secure</key>
+                        <true/>
+                        <key>AutocorrectionType</key>
+                        <string>No</string>
+                        <key>XOffset</key>
+                        <integer>120</integer>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Condition</key>
+                        <dict>
+                            <key>Key</key>
+                            <string>newaccount_show_link</string>
+                            <key>Value</key>
+                            <true/>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSButtonSpecifier</string>
+                        <key>Key</key>
+                        <string>openInEmbeddedBrowser</string>
+                        <key>Params</key>
+                        <dict>
+                            <key>Link</key>
+                            <string/>
+                        </dict>
+                        <key>Title</key>
+                        <string>localized:</string>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Condition</key>
+                        <dict>
+                            <key>Key</key>
+                            <string>newaccount_show_link2</string>
+                            <key>Value</key>
+                            <true/>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSButtonSpecifier</string>
+                        <key>Key</key>
+                        <string>openInEmbeddedBrowser</string>
+                        <key>Params</key>
+                        <dict>
+                            <key>Link</key>
+                            <string/>
+                        </dict>
+                        <key>Title</key>
+                        <string>localized:</string>
+                    </dict>
+                </array>
+            </dict>
+        </plist>
+        <plist tag="editaccount">
+            <dict>
+                <key>PreferenceSpecifiers</key>
+                <array>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Header</key>
+                        <string/>
+                        <key>HeaderInfo</key>
+                        <dict>
+                            <key>Class</key>
+                            <string>AsyncImageHeader</string>
+                            <key>Params</key>
+                            <dict>
+                                <key>ProcessImage</key>
+                                <false/>
+                                <key>ThemeImage</key>
+                                <string>logo</string>
+                                <key>Height</key>
+                                <integer>100</integer>
+                            </dict>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSTextFieldSpecifier</string>
+                        <key>Title</key>
+                        <string>localized:Username</string>
+                        <key>Key</key>
+                        <string>username</string>
+                        <key>Placeholder</key>
+                        <string>localized:username</string>
+                        <key>Secure</key>
+                        <false/>
+                        <key>AutocapitalizationType</key>
+                        <string>None</string>
+                        <key>AutocorrectionType</key>
+                        <string>No</string>
+                        <key>XOffset</key>
+                        <integer>120</integer>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSTextFieldSpecifier</string>
+                        <key>Title</key>
+                        <string>localized:Password</string>
+                        <key>Key</key>
+                        <string>password</string>
+                        <key>Placeholder</key>
+                        <string>localized:secret</string>
+                        <key>Secure</key>
+                        <true/>
+                        <key>AutocorrectionType</key>
+                        <string>No</string>
+                        <key>XOffset</key>
+                        <integer>120</integer>
+                    </dict>
+                    <dict>
+                        <key>Id</key>
+                        <string>wcb</string>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Header</key>
+                        <string>localized:Web Callback</string>
+                        <key>Footer</key>
+                        <string>localized:Enter a callback number to receive web callbacks on.</string>
+                        <key>FooterInfo</key>
+                        <dict>
+                            <key>Class</key>
+                            <string>SectionLabel</string>
+                        </dict>
+                        <key>Condition</key>
+                        <dict>
+                            <key>Selector</key>
+                            <string>isWebCallbackPossible:</string>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSTextFieldSpecifier</string>
+                        <key>Title</key>
+                        <string>localized:Callback Number</string>
+                        <key>Key</key>
+                        <string>callbackNumber</string>
+                        <key>Placeholder</key>
+                        <string>localized:your number</string>
+                        <key>KeyboardType</key>
+                        <string>PhonePad</string>
+                        <key>Alignment</key>
+                        <string>Right</string>
+                    </dict>
+                    <dict>
+                        <key>Id</key>
+                        <string>wcb</string>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Header</key>
+                        <string>localized:Callthrough</string>
+                        <key>Footer</key>
+                        <string>localized:Enter your PIN for callthrough feature here.</string>
+                        <key>FooterInfo</key>
+                        <dict>
+                            <key>Class</key>
+                            <string>SectionLabel</string>
+                        </dict>
+                        <key>Condition</key>
+                        <dict>
+                            <key>And</key>
+                            <array>
+                                <dict>
+                                    <key>Condition</key>
+                                    <dict>
+                                        <key>Key</key>
+                                        <string>cth_show_pin</string>
+                                        <key>Value</key>
+                                        <true/>
+                                    </dict>
+                                </dict>
+                                <dict>
+                                    <key>Condition</key>
+                                    <dict>
+                                        <key>Key</key>
+                                        <string>cth_enabled</string>
+                                        <key>Value</key>
+                                        <true/>
+                                    </dict>
+                                </dict>
+                            </array>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSTextFieldSpecifier</string>
+                        <key>Title</key>
+                        <string>localized:PIN Number</string>
+                        <key>Key</key>
+                        <string>cth_pin</string>
+                        <key>Placeholder</key>
+                        <string>localized:secret</string>
+                        <key>KeyboardType</key>
+                        <string>PhonePad</string>
+                        <key>Alignment</key>
+                        <string>Right</string>
+                        <key>Secure</key>
+                        <true/>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Condition</key>
+                        <dict>
+                            <key>Key</key>
+                            <string>editaccount_show_link</string>
+                            <key>Value</key>
+                            <true/>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSButtonSpecifier</string>
+                        <key>Key</key>
+                        <string>openInEmbeddedBrowser</string>
+                        <key>Params</key>
+                        <dict>
+                            <key>Link</key>
+                            <string/>
+                        </dict>
+                        <key>Title</key>
+                        <string>localized:</string>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>Condition</key>
+                        <dict>
+                            <key>Key</key>
+                            <string>editaccount_show_link2</string>
+                            <key>Value</key>
+                            <true/>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSButtonSpecifier</string>
+                        <key>Key</key>
+                        <string>openInEmbeddedBrowser</string>
+                        <key>Params</key>
+                        <dict>
+                            <key>Link</key>
+                            <string/>
+                        </dict>
+                        <key>Title</key>
+                        <string>localized:</string>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSButtonSpecifier</string>
+                        <key>Title</key>
+                        <string>localized:delete</string>
+                        <key>backgroundColor</key>
+                        <string>red</string>
+                        <key>textColor</key>
+                        <string>white</string>
+                        <key>Key</key>
+                        <string>delete</string>
+                        <key>Condition</key>
+                        <dict>
+                            <key>Selector</key>
+                            <string>isIos:</string>
+                            <key>Negate</key>
+                            <true/>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>Type</key>
+                        <string>PSGroupSpecifier</string>
+                        <key>FooterInfo</key>
+                        <dict>
+                            <key>Loader</key>
+                            <string>loadFooter:</string>
+                        </dict>
+                    </dict>
+                </array>
+            </dict>
+        </plist>
+        <rewriting> </rewriting>
+    </account>
+    <modifications>
+        <prefKeys>
+            <contactSyncHost/>
+            <ssoHost/>
+            <enableBlf>0</enableBlf>
+            <showAcrobits>0</showAcrobits>
+            <cloudLicensingType>cs</cloudLicensingType>
+            <cloudReprovisioningPeriod>3600</cloudReprovisioningPeriod>
+            <cloudReThemingPeriod>3600</cloudReThemingPeriod>
+            <historyStorageType>sql</historyStorageType>
+            <blurScreenWhenInactive>0</blurScreenWhenInactive>
+            <privacyPolicyUrl/>
+            <contactSourceType>ab</contactSourceType>
+            <contactMatchOrder>contacts,smartContacts,qd,displayName</contactMatchOrder>
+            <dialActionOnTap>autoCall</dialActionOnTap>
+            <dialActionOnLongPress>options</dialActionOnLongPress>
+            <catchNewNativeOutgoingCallAction>autoCall</catchNewNativeOutgoingCallAction>
+            <callKitDialAction>autoCall</callKitDialAction>
+            <dialActionOnPeek>options</dialActionOnPeek>
+            <rateAppEnabled>0</rateAppEnabled>
+            <rateAfterCallCount>10</rateAfterCallCount>
+            <tabOrder>qd,history,keypad,contacts</tabOrder>
+            <customTabTitle>Browser</customTabTitle>
+            <customTabUrl/>
+            <externalBrowserTab>0</externalBrowserTab>
+            <showWifiFinder>0</showWifiFinder>
+            <showAccountTitleInHistory>0</showAccountTitleInHistory>
+        </prefKeys>
+    </modifications>
+    <prefKeys>
+        <prop default="" name="ssoHost"/>
+        <prop default="" name="contactSyncHost"/>
+        <prop default="0" name="enableBlf"/>
+        <prop default="disabled" name="catchNewNativeOutgoingCall"/>
+        <prop default="0" name="blurScreenWhenInactive"/>
+        <prop default="" name="eulaUrl"/>
+        <prop default="" name="privacyPolicyUrl"/>
+        <prop default="ab" name="contactSourceType"/>
+        <prop default="autoCall" name="dialActionOnTap"/>
+        <prop default="options" name="dialActionOnLongPress"/>
+        <prop default="autoCall" name="catchNewNativeOutgoingCallAction"/>
+        <prop default="qd,history,keypad,contacts" name="tabOrder"/>
+        <prop default="keypad" name="initialTab"/>
+        <prop default="Browser" name="customTabTitle"/>
+        <prop default="" name="customTabUrl"/>
+        <prop default="0" name="externalBrowserTab"/>
+        <prop default="DEMO_APP" name="provisionedTheme"/>
+        <prop default="DEMO_APP" name="activationCode"/>
+        <prop default="108,99" name="allVideoCodecs"/>
+        <prop default="0,8,9,3,102,18,103,105,106" name="allCodecs"/>
+        <prop default="1" name="isBusiness"/>
+        <prop default="1" name="vmcheck"/>
+        <prop default="1" name="sipisDisabled"/>
+        <prop default="0" name="pushNotificationsEnabled"/>
+    </prefKeys>
+    <conferencing>
+        <prefKeys>
+            <enabled>1</enabled>
+            <conferencingType>CHIME</conferencingType>
+            <region>us-east-1</region>
+            <urlPreviewTitle>Cloudsoftphone video conference</urlPreviewTitle>
+            <urlPreviewDescription>Join Cloudsoftphone video conference by opening this link in a browser</urlPreviewDescription>
+            <pstnPhoneNumbers>2094407737(CA),2172165718(IL),3153944481</pstnPhoneNumbers>
+            <visibleUrlSubdomain>myconf</visibleUrlSubdomain>
+            <visibleUrlDomain>get-together.biz</visibleUrlDomain>
+            <uiHost>https://myconf.get-together.biz</uiHost>
+            <conferencingManagementHost>https://api.get-together.biz</conferencingManagementHost>
+        </prefKeys>
+    </conferencing>
+    <webisUrl>wss://webis.beta.cloudsoftphone.com/webis</webisUrl>
+    <webisHostPrefixBitLength>0</webisHostPrefixBitLength>
+    <webrtc_subdomain>WLWEBRTCTEST</webrtc_subdomain>
+    <userCanAccessLogging>1</userCanAccessLogging>
+    <dialActions> </dialActions>
+    <addons>
+        <prop name="addon.g729" default="1">
+            <licensing>use</licensing>
+        </prop>
+    </addons>
+    <rewriting> </rewriting>
+</provisioning>

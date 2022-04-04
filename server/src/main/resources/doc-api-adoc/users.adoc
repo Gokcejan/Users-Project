@@ -1,0 +1,37 @@
+[[resource-app-user]]
+==== App Users
+
+
+[[create-app-user]]
+===== Create App User
+Create new app user
+
+.Example request
+include::{snippets}/app-users-management/create-app-user/http-request.adoc[]
+
+.Request structure
+include::{snippets}/app-users-management/create-app-user/request-fields.adoc[]
+
+.Example response
+include::{snippets}/app-users-management/create-app-user/http-response.adoc[]
+
+.Response structure
+include::{snippets}/app-users-management/create-app-user/response-fields.adoc[]
+
+
+[[import-app-users]]
+===== Import App Users
+Import App Users from CSV
+
+.curl request
+
+include::{snippets}/app-users-management/import-app-users/curl-request.adoc[]
+
+.Example request
+
+include::{snippets}/app-users-management/import-app-users/http-request.adoc[]
+
+.Example response
+
+include::{snippets}/app-users-management/import-app-users/http-response.adoc[]
+

@@ -1,0 +1,18 @@
+cz/acrobits/csp/app_users_management/rest/dto/PasswordResetRequestDto.java
+ cz.acrobits.csp.app_users_management.rest.dto.PasswordResetRequestDto
+cz/acrobits/csp/app_users_management/rest/dto/UserCreateDto.java
+ cz.acrobits.csp.app_users_management.rest.dto.UserCreateDto
+cz/acrobits/csp/app_users_management/rest/PasswordResetRequestRESTInterface.java
+ cz.acrobits.csp.app_users_management.rest.PasswordResetRequestRESTInterface
+cz/acrobits/csp/app_users_management/rest/dto/UserAuthenticateDto.java
+ cz.acrobits.csp.app_users_management.rest.dto.UserAuthenticateDto
+cz/acrobits/csp/app_users_management/rest/dto/UserDto.java
+ cz.acrobits.csp.app_users_management.rest.dto.UserDto
+cz/acrobits/csp/app_users_management/rest/dto/PasswordSetRequestDto.java
+ cz.acrobits.csp.app_users_management.rest.dto.PasswordSetRequestDto
+cz/acrobits/csp/app_users_management/rest/dto/PropertyDto.java
+ cz.acrobits.csp.app_users_management.rest.dto.PropertyDto
+cz/acrobits/csp/app_users_management/rest/UserRESTInterface.java
+ cz.acrobits.csp.app_users_management.rest.UserRESTInterface
+cz/acrobits/csp/app_users_management/rest/dto/UserPatchDto.java
+ cz.acrobits.csp.app_users_management.rest.dto.UserPatchDto

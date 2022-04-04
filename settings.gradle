@@ -1,0 +1,5 @@
+rootProject.name = 'app-users-management'
+
+include 'public'
+include 'server'
+

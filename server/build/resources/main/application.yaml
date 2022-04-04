@@ -1,0 +1,120 @@
+info:
+  app:
+    name: Authentication Service
+
+server:
+  port: 8117
+
+eureka:
+  instance:
+    hostname: app-users-management
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka:8002/eureka/
+
+spring:
+  application:
+    name: app-users-management
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgres:5432/app-users-management
+    
+    hikari:
+      maximum-pool-size: 15
+      connection-timeout: 30000
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    show-sql: false
+    properties:
+      hibernate:
+        order_by.default_null_ordering: last
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        query:
+          plan_cache_max_size: 16
+          plan_parameter_metadata_max_size: 16
+    hibernate:
+      ddl-auto: validate
+
+  security:
+    user:
+      
+
+  flyway:
+    baselineOnMigrate: true
+    enabled: true
+
+  boot:
+    admin:
+      client:
+        url: http://admin-server:8004
+        
+        service-url: http://${eureka.instance.hostname}:${server.port}
+        management-url: http://${eureka.instance.hostname}:${server.port}
+        health-url: http://${eureka.instance.hostname}:${server.port}/health/
+        enabled: true
+        instance:
+          metadata:
+            user:
+              name: ${spring.security.user.name}
+              password: ${spring.security.user.password}
+
+  jmx:
+    enabled: true       
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://user-management:8107/user-info
+      preferTokenInfo: false
+      loadBalanced: true
+    client:
+      clientId: clientAppId
+      clientSecret: clientAppPassword
+      scope: csp
+      accessTokenUri: http://user-management:8107/oauth/token
+      userAuthorizationUri: http://user-management:8107/oauth/authorize
+      tokenName: Bearer
+      authenticationScheme: header
+      clientAuthenticationScheme: header
+      grantType: client_credentials
+
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: "*"
+  trace:
+    http:
+      include: AUTHORIZATION_HEADER,COOKIE_HEADERS,PRINCIPAL,REMOTE_ADDRESS,REQUEST_HEADERS,RESPONSE_HEADERS,SESSION_ID,TIME_TAKEN
+      enabled: true
+
+feign:
+  oauth2:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 18000000
+        readTimeout: 18000000
+
+csp:
+  url: https://providers.cloudsoftphone.com
+  provisioning_url: ${csp.url}/export/features/production/%cloudid%/servers
+  emailing:
+    enabled: true
+  queueJob:
+    cronEnabled: true
+    cronExpr: "0 */10 * * * ?"
+  integration:
+    linkupDomain: beta-get-together.biz
+
+user:
+  resetPasswordExpirationJob:
+    enabled: true
+    cronExpr: "0 0 0 * * ?"

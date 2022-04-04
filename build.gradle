@@ -1,0 +1,61 @@
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    sourceCompatibility = 11
+    targetCompatibility = 11
+
+    buildscript {
+        ext {
+            springBootVersion = "2.3.11.RELEASE"
+            springCloudVersion = "Hoxton.SR8"
+            springAdminVersion = "2.3.1"
+            springCloudContractVersion = "2.0.0.RELEASE"
+
+            cspProvisioningSdk = "1.5.0"
+
+            cspCoreVersion = "4.5.2"
+            cspCorePublicVersion = "3.6.0"
+            cspCoreJpaVersion = "3.7.1"
+            cspCoreQueueConfig = "1.4.0"
+            cspMailerSdkVersion = "1.4.0"
+
+            cspSecurityCoreVersion = "3.4.7"
+            cspUserManagementPublicVersion = "3.4.0"
+
+
+            cspLoggingVersion = "1.1.0"
+
+            docAdocDir = file('build/doc-api-adoc')
+            docHtmlDir = file('build/doc-api-html')
+        }
+        repositories {
+            jcenter()
+            mavenCentral()
+            maven {
+                url "https://plugins.gradle.org/m2/"
+            }
+            maven {
+                url 'https://dl.bintray.com/palantir/releases' // docker-compose-rule is published on bintray
+            }
+
+        }
+        dependencies {
+            classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+            classpath "org.springframework.cloud:spring-cloud-contract-gradle-plugin:${springCloudContractVersion}"
+            classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
+            classpath 'io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE'
+        }
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+        
+    }
+
+    task listAllDependencies(type: DependencyReportTask) {}
+
+}
+
